@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: blue
-        image: yanivomc/blue:latest
+        image: elevy99927/blue:latest
         ports:
         - containerPort: 80

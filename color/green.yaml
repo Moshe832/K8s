@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: green
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: green
-        image: yanivomc/green:latest
+        image: elevy99927/green:latest
         ports:
         - containerPort: 80
