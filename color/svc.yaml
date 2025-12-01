@@ -1,15 +1,14 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: blue-green
   labels:
-    app: blue-green
+    deploy: blue-green
+  name: green-blue-deployment
 spec:
-  selector:
-    app: blue-green   # Run on any pod(s) with label - app: myapp
-  ports:          # Map incoming port to target port
-  - name: blue-green   # Setting multiple ports listterns
+  ports:
+  - port: 80
     protocol: TCP
-    port: 80
     targetPort: 80
-  type: ClusterIP
+  selector:
+    canary: blue-green
+  type: LoadBalancer
