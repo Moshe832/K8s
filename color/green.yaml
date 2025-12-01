@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: green
+  name: spring-deployment
+spec:
+  selector:
+    matchLabels:
+      app: green
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: green
+    spec:
+      containers:
+      - name: green
+        image: yanivomc/green:latest
+        ports:
+        - containerPort: 80

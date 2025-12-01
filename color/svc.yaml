@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: blue-green
+  labels:
+    app: blue-green
+spec:
+  selector:
+    app: blue-green   # Run on any pod(s) with label - app: myapp
+  ports:          # Map incoming port to target port
+  - name: blue-green   # Setting multiple ports listterns
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  type: ClusterIP
