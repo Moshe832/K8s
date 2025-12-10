@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: two-containers-pod
+  labels:
+    app: my-app
+spec:
+  containers:
+    - name: writer
+      image: nginx
+      command: ["sh", "-c", "echo Hello from container one; sleep 3600"]
+      ports:
+        - containerPort: 80
+    - name: reader
+      image: nginx
+      command: ["sh", "-c", "echo Hello from container one; sleep 3600"]
+      ports:
+        - containerPort: 8080
